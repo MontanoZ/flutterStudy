@@ -14,12 +14,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:Scaffold(
+      home: Scaffold(
         appBar: AppBar(
-          title: Text('Primeiros Passos'),
+          title: const Text('Primeiros Passos'),
         ),
-        body: Container(color: Colors.black),
-        floatingActionButton: FloatingActionButton(onPressed: ),
+        body: Container(color: Colors.redAccent),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
       ),
     );
   }
