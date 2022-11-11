@@ -78,8 +78,8 @@ class _TasksState extends State<Tasks> {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                color: Colors.black45,
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.blue,
               ),
               height: 140,
             ),
@@ -88,7 +88,7 @@ class _TasksState extends State<Tasks> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(20),
                     color: Colors.deepPurple,
                   ),
                   height: 100,
@@ -97,11 +97,16 @@ class _TasksState extends State<Tasks> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)),
                         width: 72,
                         height: 100,
-                        child: Image.network(
-                          widget.immage,
-                          fit: BoxFit.fitHeight,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: Image.network(
+                            widget.immage,
+                            fit: BoxFit.fitHeight,
+                          ),
                         ),
                       ),
                       Column(
@@ -196,7 +201,7 @@ class _TasksState extends State<Tasks> {
                       child: Container(
                         width: 200,
                         child: LinearProgressIndicator(
-                          color: Colors.white,
+                          color: Colors.deepPurple,
                           value: (widget.dificuldade > 0)
                               ? (nivel / widget.dificuldade) / 10
                               : 1,
