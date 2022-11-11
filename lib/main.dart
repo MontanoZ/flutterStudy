@@ -52,14 +52,13 @@ class MyApp extends StatelessWidget {
 
 class Tasks extends StatefulWidget {
   final String nome;
-  const Tasks(this.nome,{Key? key}) : super(key: key);
+  const Tasks(this.nome, {Key? key}) : super(key: key);
 
   @override
   State<Tasks> createState() => _TasksState();
 }
 
 class _TasksState extends State<Tasks> {
-
   @override
   int nivel = 0;
   Widget build(BuildContext context) {
@@ -71,7 +70,7 @@ class _TasksState extends State<Tasks> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                color: Colors.blue,
+                color: Colors.black45,
               ),
               height: 140,
             ),
@@ -81,21 +80,24 @@ class _TasksState extends State<Tasks> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: Colors.white,
+                    color: Colors.deepPurple,
                   ),
                   height: 100,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(width: 72,height: 100,color: Colors.black26,),
+                      Container(
+                        width: 72,
+                        height: 100,
+                        color: Colors.black26,
+                      ),
                       Container(
                         width: 200,
                         child: Text(
                           widget.nome,
                           style: const TextStyle(
-                              fontSize: 24,
-                              overflow: TextOverflow.ellipsis),
+                              fontSize: 24, overflow: TextOverflow.ellipsis),
                         ),
                       ),
                       Padding(
@@ -104,11 +106,10 @@ class _TasksState extends State<Tasks> {
                           height: 52,
                           width: 52,
                           child: ElevatedButton(
-                            onPressed: (){
-                              setState((){
+                            onPressed: () {
+                              setState(() {
                                 nivel++;
                               });
-
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,7 +139,7 @@ class _TasksState extends State<Tasks> {
                         width: 200,
                         child: LinearProgressIndicator(
                           color: Colors.white,
-                          value: nivel/10,
+                          value: nivel / 10,
                         ),
                       ),
                     ),
@@ -159,4 +160,3 @@ class _TasksState extends State<Tasks> {
     );
   }
 }
-
