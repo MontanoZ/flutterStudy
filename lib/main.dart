@@ -25,21 +25,26 @@ class MyApp extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 8),
               child: Tasks(
-                'Estudar Flutter',
-              ),
+                  'Estudar Flutter',
+                  'https://play-lh.googleusercontent.com/5e7z5YCt7fplN4qndpYzpJjYmuzM2WSrfs35KxnEw-Ku1sClHRWHoIDSw3a3YS5WpGcI',
+                  3),
             ),
             Tasks(
-              'Andar de Bike',
-            ),
+                'Andar de Bike',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq3-mnm8shCpzN9sd5Sj2m-Efg-nW3RbXNyg&usqp=CAU',
+                2),
             Tasks(
-              'Ler',
-            ),
+                'Ler',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0aE9bT7EwnzrYxB1PqZFCuiBX75W8g2E9UW3pquf9bVWrpA7XuYh8raVqUXCZURg2du4&usqp=CAU',
+                4),
             Tasks(
-              'Meditar',
-            ),
+                'Meditar',
+                'https://w7.pngwing.com/pngs/849/261/png-transparent-computer-icons-guru-meditation-others-hand-silhouette-meditation.png',
+                3),
             Tasks(
-              'Jogar',
-            )
+                'Jogar',
+                'https://image.shutterstock.com/image-vector/flat-design-controller-vector-illustration-260nw-1775291483.jpg',
+                1)
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -52,7 +57,11 @@ class MyApp extends StatelessWidget {
 
 class Tasks extends StatefulWidget {
   final String nome;
-  const Tasks(this.nome, {Key? key}) : super(key: key);
+  final String immage;
+  final int dificuldade;
+
+  const Tasks(this.nome, this.immage, this.dificuldade, {Key? key})
+      : super(key: key);
 
   @override
   State<Tasks> createState() => _TasksState();
@@ -90,15 +99,64 @@ class _TasksState extends State<Tasks> {
                       Container(
                         width: 72,
                         height: 100,
-                        color: Colors.black26,
-                      ),
-                      Container(
-                        width: 200,
-                        child: Text(
-                          widget.nome,
-                          style: const TextStyle(
-                              fontSize: 24, overflow: TextOverflow.ellipsis),
+                        child: Image.network(
+                          widget.immage,
+                          fit: BoxFit.fitHeight,
                         ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 200,
+                            child: Text(
+                              widget.nome,
+                              style: const TextStyle(
+                                  fontSize: 24,
+                                  overflow: TextOverflow.ellipsis),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 1)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 2)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 3)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 4)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 5)
+                                    ? Colors.blue
+                                    : Colors.blue[100],
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
