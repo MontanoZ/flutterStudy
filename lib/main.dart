@@ -7,15 +7,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
       ),
       home: Scaffold(
+        backgroundColor: Colors.purpleAccent,
         appBar: AppBar(
           title: const Text('Tarefas'),
           leading: Container(),
@@ -79,7 +79,7 @@ class _TasksState extends State<Tasks> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Colors.blue,
+                color: Colors.blueAccent,
               ),
               height: 140,
             ),
@@ -212,7 +212,7 @@ class _TasksState extends State<Tasks> {
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
                         'Nivel: $nivel',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                     ),
                   ],
